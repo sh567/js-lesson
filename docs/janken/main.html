@@ -26,7 +26,7 @@
         var enemy = Math.floor(Math.random()*(max + 1 - min)) + min;
         const result = player - enemy;
 
-        enemy_elem.innerText = array[enemy];
+        enemy_elem.innerText = deck[enemy];
 
         if (result === -1 || result === 2){
             result_elem.innerText = "あなたの勝ち";
