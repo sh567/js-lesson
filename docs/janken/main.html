@@ -8,6 +8,37 @@
 </head>
 <body>
     <h1>じゃんけんゲーム</h1>
-    
+
+    <div id="enemy"></div>
+
+    <div id="result"></div>
+
+    <button onclick="button(0)">グー</button>
+    <button onclick="button(1)">チョキ</button>
+    <button onclick="button(2)">パー</button>
+<script>
+    function button(player) {
+        const min = 0;
+        const max = 2;
+        let enemy_elem = document.getElementById("enemy");
+        let result_elem = document.getElementById("result");
+        var enemy = Math.floor(Math.random()*(max + 1 - min)) + min;
+        const result = player - enemy;
+
+        enemy_elem.innerText = enemy;
+
+        if (result === -1 || result === 2){
+            result_elem.innerText = "win";
+        } else if(result === -2 || result == 1) {
+            result_elem.innerText = "lose";
+        } else {
+            result_elem.innerText = "draw";
+        }
+
+
+
+    }
+
+</script>
 </body>
 </html>
